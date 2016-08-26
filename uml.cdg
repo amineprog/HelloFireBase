@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<ClassDiagram name="uml">
+  <ClassDiagramComponents>
+    <Class name="System" package="" visibility="public" xPosition="-4.0" yPosition="40.0">
+      <Fields>
+        <Field name="id" type="String" visibility="private"/>
+        <Field name="name" type="String" visibility="private"/>
+      </Fields>
+      <Constructors/>
+      <Methods/>
+    </Class>
+    <Class name="Niveau" package="" visibility="public" xPosition="289.0" yPosition="150.0">
+      <Fields>
+        <Field name="id" type="String" visibility="private"/>
+        <Field name="name" type="String" visibility="private"/>
+      </Fields>
+      <Constructors/>
+      <Methods/>
+    </Class>
+  </ClassDiagramComponents>
+  <ClassDiagramRelations>
+    <HasRelation name="has" source="Niveau" target="System" type="Default" sourceCardinality="0..1" targetCardinality="1..1"/>
+  </ClassDiagramRelations>
+</ClassDiagram>
