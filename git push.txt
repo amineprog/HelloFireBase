@@ -1,0 +1,13 @@
+#link
+
+git remote add origin link
+
+//pull those changes
+
+git pull origin master
+
+//now, push your work to your new repo
+
+git push origin master
+
+
