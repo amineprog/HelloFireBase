@@ -16,6 +16,7 @@ import javax.swing.JPopupMenu;
 import javax.swing.border.BevelBorder;
 import javax.swing.event.PopupMenuEvent;
 import javax.swing.event.PopupMenuListener;
+import javax.swing.table.DefaultTableModel;
 
 /**
  *
@@ -96,14 +97,20 @@ public class AppStart extends javax.swing.JFrame {
         ctrl.getRef().addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
-                System.out.println("");
                 DefaultListModel<Category> listModel = new DefaultListModel<Category>();
-                Iterable<DataSnapshot> dt = dataSnapshot.child("category").getChildren();                
-                //Iterable<DataSnapshot> dt = dataSnapshot.child("category").getChildren();                
+                Iterable<DataSnapshot> dt = dataSnapshot.child("category").getChildren();
+                Iterable<DataSnapshot> dt2 = dataSnapshot.child("course").getChildren();
                 for (DataSnapshot object : dt) {
                     listModel.addElement(object.getValue(Category.class));
                 }
                 listCategory.setModel(listModel);
+                DefaultTableModel model = new DefaultTableModel();
+                model.addColumn("ID");
+                model.addColumn("Name");
+                tCourses.setModel(model);
+                for (DataSnapshot object : dt2) {
+                    model.addRow(new Object[]{"r1", "r2"});
+                }
                 //System.out.println(dataSnapshot.child("category"));
                 /*  while (Icategory.hasNext()) {
                         listModel.addElement("IPPO");
